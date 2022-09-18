@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && tsc-alias",
     "start": "node dist/index.js",
-    "start:dev": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts",
+    "start:dev": "nodemon --watch 'src/' --exec 'ts-node -r tsconfig-paths/register src/index.ts' -e ts",
     "husky:prepare": "husky install",
     "test": "jest --passWithNoTests",
     "test:watch": "yarn test --watch",
@@ -30,6 +30,8 @@
     "prettier": "^2.7.1",
     "ts-jest": "^29.0.1",
     "ts-node": "^10.9.1",
+    "tsc-alias": "^1.7.0",
+    "tsconfig-paths": "^4.1.0",
     "typescript": "^4.8.3"
   }
 }
